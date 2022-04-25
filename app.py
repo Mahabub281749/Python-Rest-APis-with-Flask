@@ -14,7 +14,7 @@ def bye():
     #prepare a response for the request that came to /bye
     c= 2*534
     s =str(c)
-    retJson = {
+    retJson = [
         'Name' : 'Mahabub',
         'Age' : 22,
         "phones" : [
@@ -23,7 +23,7 @@ def bye():
                 "phoneNumber" : 11111
             }
         ]
-    }
+    ]
     return jsonify(retJson)
 
 #without defining port
