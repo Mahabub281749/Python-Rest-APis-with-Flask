@@ -1,4 +1,5 @@
-from flask import Flask, jsonify
+from flask import Flask
+import json
 app = Flask(__name__) #Flask("Hi"); you can write this one also
 
 @app.route('/')
@@ -14,17 +15,19 @@ def bye():
     #prepare a response for the request that came to /bye
     c= 2*534
     s =str(c)
-    retJson = [
-        'Name' : 'Mahabub',
-        'Age' : 22,
-        "phones" : [
-            {
-                "phoneName" : "Iphone8"
-                "phoneNumber" : 11111
-            }
-        ]
-    ]
-    return jsonify(retJson)
+    retJson = {
+                {
+                    'Name' : 'Mahabub',
+                    'Age' : 22,
+                    "phones" : [
+                        {
+                            "phoneName" : "Iphone8",
+                            "phoneNumber" : 11111
+                        }
+                    ]
+                }  
+    }
+    return retJson
 
 #without defining port
 if __name__=="__main__":
