@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import json
 app = Flask(__name__) #Flask("Hi"); you can write this one also
 
@@ -26,7 +26,7 @@ def bye():
                     ]
                   
     }
-    return json.dumps(retJson)
+    return jsonify(retJson)
 
 #without defining port
 if __name__=="__main__":
